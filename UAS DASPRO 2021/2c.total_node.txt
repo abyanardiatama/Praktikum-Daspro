@@ -1,0 +1,33 @@
+Total Elemen Node						TotalNode(P)
+DEFINISI SPESIFIKASI
+TotalNode	: Tree --> integer
+{mengembalikan total jumlah semua node dalam sebua tree}
+
+REALISASI
+TotalNode(P):
+	if isOneElmt(P) then
+		akar(P)
+	else
+		if isBiner(P) then
+			akar(P) + TotalNode(left(P)) + TotalNode(Right(P))
+		elif isUnerLeft(P) then
+			akar(P) + TotalNode(left(P))
+		elif isUnerRight(P) then
+			akar(P) + TotalNode(right(P))
+
+APLIKASI
+P = [50,
+		[17,
+			[12,
+				[9,[],[]],
+				[14,[],[]]],
+			[23,
+				[[]],
+				[19,[],[]]]],
+		[72,
+			[54,
+				[],
+				[67,[],[]]],
+			[76,[],[]]]
+
+TotalNode(P) ----> 50+17+72+12+23+54+76+9+14+19+67 = 413

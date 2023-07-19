@@ -1,0 +1,37 @@
+max_elemen_daun						max_elemen_daun(P)
+DEFINISI SPESIFIKASI
+max_elemen_daun	: Tree --> integer
+{mengembalikan nilai maksimum dari sebuah tree}
+
+maks : 2 integer --> integer
+{mengembalikan nilai maksimum dari 2 bilangan}
+
+REALISASI
+max_elemen_daun(P):
+	if isOneElmt(P) then
+		akar(P)
+	else
+		if isBiner(P) then
+			maks( max_elemen_daun(left(P)), max_elemen_daun(right(P)) )
+		if isUnerLeft(P) then
+			maks( max_elemen_daun(left(P)), akar(P) )
+		if isUnerRight(P) then
+			maks( max_elemen_daun(right(P)), akar(P) )
+APLIKASI
+P = [50,
+		[17,
+			[12,
+				[9,[],[]],
+				[14,[],[]]],
+			[23,
+				[[]],
+				[19,[],[]]]],
+		[72,
+			[54,
+				[],
+				[67,[],[]]],
+			[76,[],[]]]
+
+max_elemen_daun(P) ----> 76
+
+

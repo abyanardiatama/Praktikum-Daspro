@@ -1,0 +1,29 @@
+max_list								max_list(L1)
+
+DEFINISI SPESIFIKASI
+max2 		: 2 integer --> integer
+{mengembalikan nilai maksimum}
+
+max_list 	: list of integer --> integer
+{menentukan bilangan maksimum dari sebuah list integer}
+
+REALISASI
+max2(a,b):
+	if a<b then
+		b
+	else
+		a
+
+max_list(L1):
+	if empty_list(L1) then
+		[]
+	elif isOneElmt(L1) then
+		L1
+	else {rekurens}
+		max2(first_element(L1),max_list(tail(L1)))
+
+APLIKASI
+L1 <-- [19, 21, 25, 11,14, -13, 10, -19, 10]
+
+max_list(L1) ----> 25
+

@@ -1,0 +1,28 @@
+LAMBDA FILTER LIST 								Kelipatan5(),BukanKelipatan5(),FilterList()
+
+DEFINISI SPESIFIKASI
+Kelipatan5	: list of integer --> Boolean
+{bernilai benar jika suatu bilagan merupakan kelipatan dari 5}
+
+BukanKelipatan5 : list of integer --> Boolean
+{bernilai benar jika suatu bilangan bukan merupakan kelipatan dari 5}
+
+FilterList	: list of integer --> list of integer
+{mengembalikan list dengan yang diinginkan}
+
+REALISASI
+Kelipatan5 		=	lambda x : x % 5 == 0
+
+BukanKelipatan5 =	lambda x : x % 5 != 0
+
+#filter list kelipatan 5
+L2 = lambda L: konso(first_elmt(L), filter_list_kelipatan5(tail(L))) if not empty_list(L) and kelipatan5(first_elmt(L)) else filter_list_kelipatan5(tail(L)) if not empty_list(L) else []
+
+#filter list bukan kelipatan 5
+L3 = lambda L: konso(first_elmt(L), filter_list_bukan_kelipatan5(tail(L))) if not empty_list(L) and bukan_kelipatan5(first_elmt(L)) else filter_list_bukan_kelipatan5(tail(L)) if not empty_list(L) else []
+
+
+APLIKASI
+L = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] --> [5,10]
+L2=Filter_List( ...) akan menghasilkan L2=[ 60, 20, 50 ] --> kelipatan5
+L3=Filter_List( ...) akan menghasilkan L3=[ 18, 7, 19, 23 ] --> bukan_kelipatan5

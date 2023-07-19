@@ -1,0 +1,35 @@
+Binary Search Tree		BST(P,x)
+
+DEFINIS SPESIFIKASI
+BST	: integer, tree --> Boolean
+{Mencari nilai suatu bilangan dalam suatu tree}
+
+REALISASI
+BST(P,x):
+	if P==[] then
+		False
+	elif isOneElmt(P) then
+		if Akar(P) == x then
+			True
+		else
+			False
+	else 
+		if isBiner(P) then
+			if Akar(P) == x then
+				True
+			elif Akar(P) < x then
+				BST(Right(P),x)
+			else:
+				BST(Left(P),x)
+		elif isUnerLeft(P) then
+			if Akar(P) == x then
+				True
+			else:
+				BST(Left(P),x)
+		elif isUnerRight(P) then
+			if Akar(P) == x then
+				True
+			else:
+				BST(Right(P),x)
+		else
+			False

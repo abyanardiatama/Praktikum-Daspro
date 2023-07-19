@@ -1,0 +1,21 @@
+Minus										Minus(A,B)
+
+DEFINSI SPESIFIKASI
+Minus	: 2 Set of integer --> Set of integer
+{mengembalikan sebuah set yang merupakan hasil dari selisih 2 set} 
+
+REALISASI
+Minus(A,B):
+	if is_empty(A):
+		[]
+	else:
+		if is_member(first(A),B) then
+			minus(Tail(A),B)
+		else {rekurens}
+			konso(first(A),minus(Tail(A),B))
+
+APLIKASI
+A = [5,12, 16, 7, 19, 25, 30]
+B = [12, 7, 25]
+
+minus(A,B) = [5, 16, 19, 30]

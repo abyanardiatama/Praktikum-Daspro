@@ -1,0 +1,32 @@
+NdDaun										NbDaun(P)
+DEFINISI SPESIFIKASI
+NbDaun	:	Tree --> integer
+{mengembalikan jumlah daun dari sebuah tree}
+
+REALISASI
+NbDaun(P):
+	if isOneElmt(P) then
+		akar(P)
+	else:
+		if isBiner(P) then
+			NbDaun(left(P)) + NbDaun(right(P))
+		elif isUnerRight(P) then
+			NbDaun(right(P))
+		elif isUnerLeft(P) then
+			NbDaun(left(P))
+APLIKASI
+P = [50,
+		[17,
+			[12,
+				[9,[],[]],
+				[14,[],[]]],
+			[23,
+				[[]],
+				[19,[],[]]]],
+		[72,
+			[54,
+				[],
+				[67,[],[]]],
+			[76,[],[]]]
+
+NbDaun(P) ----> 9+14+19+67+76 = 185

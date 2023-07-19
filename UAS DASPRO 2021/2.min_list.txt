@@ -1,0 +1,26 @@
+min_list								min_list(L1)
+
+DEFINISI DAN SPESIFIKASI
+min2		: 2 integer --> integer
+{mengembalikan nilai minimum}
+
+min_list	: list of integer --> integer
+{mengembalikan nilai minimum dari sebuah list}
+
+REALISASI
+min2(a,b):
+	if a<b then
+		b
+	else
+		a
+
+min_list(L1):
+	if empty_list(L1) then
+		[]
+	else {rekurens]
+		min2(first_element(L1),min_list(tail(L1)))
+
+APLIKASI
+L1 <-- [19, 21, 25, 11,14, -13, 10, -19, 10]
+
+min_list(L1) ----> -19
